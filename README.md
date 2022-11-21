@@ -22,6 +22,7 @@ type test struct {
 
 to
 
+```go
 type test struct {
 	val1       string `json:"val1"`
 	valuethree int    `xml:"v3" json:"val3"`
