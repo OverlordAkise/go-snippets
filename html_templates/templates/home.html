@@ -1,0 +1,43 @@
+{{ define "home" }}
+<!DOCTYPE HTML>
+<html>
+    {{ template "Header" . }}
+    <body>
+        {{ template "Navbar" . }}
+        <div id="main">
+            <h1>{{.Title}}</h1>
+            <h2>{{.Version}}</h2>
+            {{if .IsRunning}}
+                <p>Status: <span style="color:green;">Running</span></p>
+            {{else}}
+                <p>Status: <span style="color:red;">Crashed</span></p>
+            {{end}}
+            <p>
+            RAM: {{.Ram}} KB<br>
+            <br>
+            Key:Values of .Dbstats:
+            {{range $k,$v := .Dbstats}}
+                <p>Key: {{$k}}<br>
+                Value: {{$v}}</p>
+            {{end}}
+            <br><br><br><br>
+            <p>The following example for accessing struct elements of e.g. .Dbstats </p>
+            {{with .Dbstats}}
+                MaxOpenConnections: {{.MaxOpenConnections}}<br>
+                <br>
+                OpenConnections: {{.OpenConnections}}<br>
+                InUse: {{.InUse}}<br>
+                Idle: {{.Idle}}<br>
+                <br>
+                WaitCount: {{.WaitCount}}<br>
+                WaitDuration: {{.WaitDuration}}<br>
+                MaxIdleClosed: {{.MaxIdleClosed}}<br>
+                MaxIdleTimeClosed: {{.MaxIdleTimeClosed}}<br>
+                MaxLifetimeClosed: {{.MaxLifetimeClosed}}<br>
+            {{end}}
+            </p>
+        </div>
+        {{ template "Footer" }}
+    </body>
+</html>
+{{end}}

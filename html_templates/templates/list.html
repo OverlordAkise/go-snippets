@@ -1,0 +1,33 @@
+{{ define "list" }}
+<!DOCTYPE HTML>
+<html>
+    {{ template "Header" . }}
+    <body>
+        {{ template "Navbar" . }}
+        <div id="main">
+            <h1>{{.Title}}</h1>
+            <br>
+            <h3>Count: <span id="streamercount"> </span></h3>
+            {{range $k, $v := .List}}
+                <hr>
+                <p class="streamer"><a href="list/{{$k}}">{{$k}}</a></p>
+            {{end}}
+            <hr>
+            <button id="removestreamer">Remove Streamer</button>
+            <button id="addstreamer">Add Streamer</button>
+        </div>
+        {{ template "Footer" }}
+    </body>
+    <script>
+        document.getElementById("addstreamer").addEventListener("click", function () {
+            let name = prompt("Streamer name to add (all lowercase)");
+            window.location.href = "add/"+name;
+        });
+        document.getElementById("removestreamer").addEventListener("click", function () {
+            let name = prompt("Streamer name to remove (all lowercase)");
+            window.location.href = "del/"+name;
+        });
+        document.getElementById("streamercount").innerText = document.getElementsByClassName("streamer").length;
+    </script>
+</html>
+{{end}}
