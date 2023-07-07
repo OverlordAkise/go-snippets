@@ -44,7 +44,7 @@ func main() {
 	r := gin.New()
 	r.Use(ginzap.RecoveryWithZap(logger, true))
 	r.Use(ginzap.Ginzap(logger, time.RFC3339, true))
-	//Uncomment the above line and use the following function
+	//Remove the above line and use the following function
 	//if you want to use a custom gin logging function with more control:
 	//AddLogging(r,logger)
 
