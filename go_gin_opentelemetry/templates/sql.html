@@ -1,0 +1,15 @@
+{{ define "sql" }}
+{{ template "header" . }}
+
+<h1>{{ .title }}</h1>
+
+<table>
+{{range $k,$v := .list}}
+    <tr><td>{{$v.Key}}</td><td>{{$v.Value}}</td></tr>
+{{end}}
+</table>
+<a href="example">example</a>
+</div>
+</body>
+</html>
+{{end}}
