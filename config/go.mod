@@ -1,7 +1,5 @@
-module example.com/config
+module luctus.at/example/configyaml
 
-go 1.19
+go 1.21.1
 
-require sigs.k8s.io/yaml v1.3.0
-
-require gopkg.in/yaml.v2 v2.4.0 // indirect
+require sigs.k8s.io/yaml v1.4.0

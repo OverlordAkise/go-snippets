@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
+	"os"
 	"sigs.k8s.io/yaml"
 )
 
@@ -14,7 +14,7 @@ type Config struct {
 
 func main() {
 	//read config
-	configfile, err := ioutil.ReadFile("./config.yaml")
+	configfile, err := os.ReadFile("./config.yaml")
 	if err != nil {
 		panic(err)
 	}
