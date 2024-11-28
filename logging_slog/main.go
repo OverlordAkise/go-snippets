@@ -1,18 +1,18 @@
 package main
 
 import (
-    "os"
 	"log/slog"
+	"os"
 )
 
-// NewTextHandler = logfmt format, NewJSONHandler = json format 
+// NewTextHandler = logfmt format, NewJSONHandler = json format
 
 func main() {
-    // https://pkg.go.dev/log/slog#Level
-    // -4=debug, 0=info, 4=warn, 8=error
-    loglevel := -4
-    logpath := "stdout"
-    
+	// https://pkg.go.dev/log/slog#Level
+	// -4=debug, 0=info, 4=warn, 8=error
+	loglevel := -4
+	logpath := "stdout"
+
 	var logger *slog.Logger
 	loglvl := new(slog.LevelVar)
 	logconf := &slog.HandlerOptions{
@@ -30,7 +30,6 @@ func main() {
 		logger = slog.New(slog.NewTextHandler(f, logconf))
 	}
 	loglvl.Set(slog.Level(loglevel))
-    logger.Info("message at info level","ip","127.0.0.1")
-    logger.Error("mesage at error level","mykey",5,"err",nil)
+	logger.Info("message at info level", "ip", "127.0.0.1")
+	logger.Error("mesage at error level", "mykey", 5, "err", nil)
 }
-

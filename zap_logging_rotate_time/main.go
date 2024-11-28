@@ -1,7 +1,7 @@
 package main
 
 import (
-    "go.uber.org/zap"
+	"go.uber.org/zap"
 )
 
 func main() {
@@ -17,5 +17,5 @@ func main() {
 	}
 	defer logger.Sync()
 
-    logger.Info("I am the msg part", zap.Int("newkey", 3))
+	logger.Info("I am the msg part", zap.Int("newkey", 3))
 }
