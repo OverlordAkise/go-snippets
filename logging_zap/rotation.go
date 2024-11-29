@@ -7,11 +7,8 @@ import (
 )
 
 func main() {
-
 	//Copied from https://github.com/uber-go/zap/blob/master/FAQ.md
-
-	// lumberjack.Logger is already safe for concurrent use, so we don't need to
-	// lock it.
+	// lumberjack.Logger is already safe for concurrent use, so we don't need to lock it.
 	w := zapcore.AddSync(&lumberjack.Logger{
 		Filename:   "./foo.log",
 		MaxSize:    500, // megabytes
@@ -29,3 +26,4 @@ func main() {
 
 	logger.Info("I am the msg part", zap.Int("newkey", 3))
 }
+

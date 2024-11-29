@@ -1,8 +1,6 @@
-# Golang Code Snippets
+# Golang code snippets
 
-This is a collection of knowledge and code examples for using go.
+This is a collection of code examples for golang.
 
-More documentation about each example can be found in their respective README.md file.
-
-To learn more golang stuff visit [https://shira.at/blog/golang_notes.html](https://shira.at/blog/golang_notes.html)
+To read about more golang stuff you can visit [https://shira.at/blog/golang_notes.html](https://shira.at/blog/golang_notes.html)
 

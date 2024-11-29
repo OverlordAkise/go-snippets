@@ -7,7 +7,7 @@ import (
 
 func main() {
 	var port int
-	//pointer,flagname,default,description
+	//          pointer,flagname,default,description
 	flag.IntVar(&port, "port", 3000, "Port to listen on")
 
 	var file string

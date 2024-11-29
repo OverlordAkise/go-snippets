@@ -9,8 +9,6 @@ import (
 	"time"
 )
 
-//This file is taken from my other project, github.com/OverlordAkise/istina
-
 func RegisterMetrics(r *gin.Engine) {
 
 	//Counter for only uphill data, Vec for variable labels
